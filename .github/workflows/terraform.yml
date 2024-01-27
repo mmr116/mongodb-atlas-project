@@ -19,8 +19,14 @@ jobs:
         terraform_version: 0.14.11
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
+    - name: Display Terraform Version
+      run: terraform --version
+
     - name: Terraform Init
       run: terraform init
+
+    - name: Display MongoDB Atlas Provider Version
+      run: terraform providers
 
     - name: Configure MongoDB Atlas Credentials
       run: |
@@ -30,7 +36,9 @@ jobs:
         echo "TF_VAR_mongodb_atlas_project_name=${{ secrets.MONGODB_ATLAS_PROJECT_NAME }}" >> $GITHUB_ENV
 
     - name: Terraform Plan
-      run: terraform plan
+      run: |
+        terraform init
+        terraform plan
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
