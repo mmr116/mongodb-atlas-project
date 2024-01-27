@@ -46,8 +46,13 @@ jobs:
         echo "Terraform Cloud API Token: ${{ secrets.TF_API_TOKEN }}"
 
     - name: Terraform Plan
-      run: terraform plan
+      run: |
+        echo "Running terraform plan"
+        terraform plan -out=tfplan
+        echo "Terraform plan completed"
+        cat tfplan  # Display the content of the plan file for additional debugging
+
+
 
     - name: Terraform Apply
       run: terraform apply -auto-approve
-
