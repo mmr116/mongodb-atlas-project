@@ -19,6 +19,9 @@ jobs:
         terraform_version: 0.14.11
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
+    - name: Terraform Init
+      run: terraform init
+
     - name: Configure MongoDB Atlas Credentials
       run: |
         echo "TF_VAR_mongodb_atlas_public_key=${{ secrets.MONGODB_ATLAS_PUBLIC_KEY }}" >> $GITHUB_ENV
