@@ -17,7 +17,11 @@ jobs:
       uses: hashicorp/setup-terraform@v1.3.0
       with:
         terraform_version: 0.14.11
-        nodejs_version: '14'  # Add this line
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'  # Specify the Node.js version
 
     - name: Configure MongoDB Atlas Credentials
       run: |
