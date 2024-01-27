@@ -32,3 +32,7 @@ resource "mongodbatlas_project" "example" {
 variable "mongodb_atlas_project_name" {
   description = "Name of the MongoDB Atlas project"
 }
+
+variable "TF_API_TOKEN" {
+  description = "Terraform Cloud API token"
+}
