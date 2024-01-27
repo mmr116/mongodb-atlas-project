@@ -2,3 +2,4 @@
 mongodb_atlas_public_key  = "your-mongodb-public-key"
 mongodb_atlas_private_key = "your-mongodb-private-key"
 mongodb_atlas_org_id      = "your-mongodb-org-id"
+mongodb_atlas_project_name = "test-project-11111"
