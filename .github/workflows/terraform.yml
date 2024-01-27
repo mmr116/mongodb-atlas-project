@@ -15,9 +15,6 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Clean Dependencies
-      run: npm ci
-
     - name: Checkout Repository
       uses: actions/checkout@v2
 
